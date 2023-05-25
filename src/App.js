@@ -20,7 +20,6 @@ function App() {
         setTimeLeft((prevTimeLeft) => {
           if (prevTimeLeft === 0) {
             audioRef.current.play();
-            console.log(audioRef.current);
             if (timerLabel === "Session") {
               setTimerLabel("Break");
               return breakLength * 60;
