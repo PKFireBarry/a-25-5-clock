@@ -26,6 +26,7 @@ function App() {
               return breakLength * 60;
             } else {
               setTimerLabel("Session");
+              alert("Time to get back to work!");
               return sessionLength * 60;
             }
           } else {
@@ -46,6 +47,9 @@ function App() {
   const handleBreakIncrement = () => {
     if (breakLength < 60) {
       setBreakLength((prevBreakLength) => prevBreakLength + 1);
+    }
+    else {
+      setBreakLength(60);
     }
   };
 
