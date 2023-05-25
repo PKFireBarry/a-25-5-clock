@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaPlay, FaPause, FaUndo } from "react-icons/fa";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import sound from "../src/ding.mp3";
+
+
 import "./App.css";
 
 function App() {
@@ -17,6 +20,7 @@ function App() {
         setTimeLeft((prevTimeLeft) => {
           if (prevTimeLeft === 0) {
             audioRef.current.play();
+            console.log(audioRef.current);
             if (timerLabel === "Session") {
               setTimerLabel("Break");
               return breakLength * 60;
@@ -128,7 +132,7 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <audio id="beep" ref={audioRef} src="Freecodecamp Projects/Front End Development Libraries/a-25-5-clock/src/ding.mp3" />
+      <audio id="beep" ref={audioRef} src={sound} />
     </div>
   );
 }
